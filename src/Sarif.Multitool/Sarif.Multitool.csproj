@@ -11,11 +11,9 @@
       We use [Condition="'$(RuntimeIdentifier)' != ''"] to identify settings used only for these builds.      
     -->
 
-    <!-- Publish trimmed single-file exe -->
-    <PublishSingleFile>true</PublishSingleFile>
-
-    <!-- Publish trimmed in per-platform builds, and 'ready-to-run' on Windows (Linux/Mac not yet supported) -->
+    <!-- Publish trimmed, single file for per-platform builds, and 'ready-to-run' on Windows (Linux/Mac not yet supported) -->
     <PublishTrimmed Condition="'$(RuntimeIdentifier)' != ''">true</PublishTrimmed>
+    <PublishSingleFile Condition="'$(RuntimeIdentifier)' != ''">true"</PublishSingleFile>
     <PublishReadyToRun Condition="'$(RuntimeIdentifier)' == 'win-x64'">true</PublishReadyToRun>   
   </PropertyGroup>
 
