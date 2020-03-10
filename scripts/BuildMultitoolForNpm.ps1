@@ -67,10 +67,10 @@ foreach ($package in (Get-ChildItem $npmBuildFolder).FullName) {
 
 # After merging outputs, delete the other 250MB copies of the Multitool single file exes (saving only the bld\Publish\npm copy)
 if (-not $NoPostClean) {
-    Remove-DirectorySafely $projectBinDirectory\netcoreapp3.1\win-x64
-    Remove-DirectorySafely $projectBinDirectory\netcoreapp3.1\linux-x64
-    Remove-DirectorySafely $projectBinDirectory\netcoreapp3.1\osx-x64
-    Remove-DirectorySafely $projectBinDirectory\Publish\netcoreapp3.1
+    foreach ($runtime in "win-x64", "linux-x64", "osx-x64") {
+        Remove-DirectorySafely $projectBinDirectory\netcoreapp3.1\$runtime
+        Remove-DirectorySafely $projectBinDirectory\Publish\netcoreapp3.1\$runtime
+    }
 }
 
 Write-Information "$ScriptName SUCCEEDED."
