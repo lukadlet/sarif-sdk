@@ -18,6 +18,7 @@
     <None Remove="TestData\MultipleRuns.sarif" />
     <None Remove="TestData\NewAndOldResults.sarif" />
     <None Remove="TestData\NullResults.sarif" />
+    <None Remove="TestData\TestWorkItemContext.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +45,7 @@
     <EmbeddedResource Include="TestData\MultipleRuns.sarif" />
     <EmbeddedResource Include="TestData\NewAndOldResults.sarif" />
     <EmbeddedResource Include="TestData\NullResults.sarif" />
+    <EmbeddedResource Include="TestData\TestWorkItemContext.xml" />
   </ItemGroup>
 
   <ItemGroup>

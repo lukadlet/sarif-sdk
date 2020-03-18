@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Properties Type="WorkItems.SarifWorkItemContext">
+  <Properties Key="Extensibility.Options" Type="PropertiesDictionary">
+    <Property Key="PluginAssemblyLocations" Type="StringSet">
+      <Item>C:\Users\nmarston\source\repos\Handyman\src\Microsoft.WorkItem.Plugins.CompCentral\bin\Debug\netcoreapp2.1\win-x64\Microsoft.WorkItem.Plugins.CompCentral.dll</Item>
+    </Property>
+    <Property Key="PluginAssemblyQualifiedNames" Type="StringSet">
+      <Item>Microsoft.WorkItem.Plugins.CompCentral.CompCentralModelTransformer, Microsoft.WorkItem.Plugins.CompCentral, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Item>
+    </Property>
+    <!--<Property Key="ProjectUri" Value="https://secretscantest.visualstudio.com/RTAKET-DELME" Type="System.Uri" />
+    <Property Key="SecurityToken" Value="xxx" />-->
+  </Properties>
+  <Properties Key="TestWorkItemModelTransformer.Options" Type="PropertiesDictionary">
+    <Property Key="AdditionalTags" Type="StringSet">
+      <Item>LilaTestingExtension</Item>
+    </Property>
+  </Properties>
+</Properties>

@@ -3,6 +3,7 @@
 
 using System;
 using System.IO;
+using System.Text;
 using FluentAssertions;
 using Microsoft.CodeAnalysis.Test.Utilities.Sarif;
 using Xunit;
@@ -68,6 +69,20 @@ namespace Microsoft.CodeAnalysis.Sarif.WorkItems
             workItemModel.Area.Should().Be(TestConstants.FileLocations.Location1);
         }
 
+        [Fact]
+        public void WorkItemFilingContext_CompCentralTransformer()
+        {
+            ResourceExtractor extractor = new ResourceExtractor(typeof(SarifWorkItemFilingContextTests));
+            string configXml = extractor.GetResourceText("TestWorkItemContext.xml");
+            SarifWorkItemContext context = LoadFromXml(configXml);
+            SarifLog sarifLog = TestConstants.SarifLogs.OneIdThreeLocations;
+
+            var workItemModel = new SarifWorkItemModel(sarifLog, context);
+
+            context.Transformers[0].Transform(workItemModel);
+            workItemModel.Area.Should().Be(TestConstants.FileLocations.Location1);
+        }
+
         private SarifWorkItemContext RoundTripThroughXml(SarifWorkItemContext sarifWorkItemContext)
         {
             string temp = Path.GetTempFileName();
@@ -87,6 +102,17 @@ namespace Microsoft.CodeAnalysis.Sarif.WorkItems
             }
             return sarifWorkItemContext;
         }
+
+        private SarifWorkItemContext LoadFromXml(string contextInformation)
+        {
+            var sarifWorkItemContext = new SarifWorkItemContext();
+            byte[] byteArray = Encoding.UTF8.GetBytes(contextInformation);
+            MemoryStream stream = new MemoryStream(byteArray);
+            sarifWorkItemContext.LoadFromXml(stream);
+
+            return sarifWorkItemContext;
+        }
+
 
         public class Munger : SarifWorkItemModelTransformer
         {
