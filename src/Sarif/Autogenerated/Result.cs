@@ -103,6 +103,11 @@ namespace Microsoft.CodeAnalysis.Sarif
             }
         }
 
+        public bool AppropriateForFiling()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// A message that describes the result. The first sentence of the message only will be displayed when visible space is limited.
         /// </summary>

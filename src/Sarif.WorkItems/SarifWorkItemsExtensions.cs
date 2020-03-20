@@ -1,6 +1,8 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Microsoft.CodeAnalysis.Sarif.WorkItems
 {
@@ -88,7 +90,7 @@ namespace Microsoft.CodeAnalysis.Sarif.WorkItems
                     {
                         foreach (Result result in run?.Results)
                         {
-                            if (result.AppropriateForFiling())
+                            if (result.ShouldBeFiled())
                             {
                                 appropriateResultCount++;
                             }

@@ -54,7 +54,7 @@ namespace Microsoft.CodeAnalysis.Sarif.WorkItems
         public void WorkItemFilingContext_PopulateDescription()
         {
             var context = new SarifWorkItemContext();
-            SarifLog sarifLog = TestData.SarifLogs.OneIdThreeLocations;
+            SarifLog sarifLog = TestData.CreateOneIdThreeLocations();
 
             var workItemModel = new SarifWorkItemModel(sarifLog, context);
             workItemModel.BodyOrDescription.Should().NotBeNullOrEmpty();
