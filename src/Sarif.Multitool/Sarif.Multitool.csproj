@@ -37,6 +37,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.7.82" />
+    <PackageReference Include="CsvHelper" Version="15.0.0" />
     <PackageReference Include="Microsoft.Json.Pointer" Version="1.1.1" />
     <PackageReference Include="Microsoft.Json.Schema" Version="1.1.1" />
     <PackageReference Include="Microsoft.Json.Schema.Validation" Version="1.1.1" />
@@ -75,7 +76,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include=".\DotnetToolSettings.xml" CopyToOutputDirectory="PreserveNewest" />
-    <EmbeddedResource Include="$(MsBuildThisFileDirectory)..\Sarif\Schemata\sarif-$(SchemaVersionAsPublishedToSchemaStoreOrg).json" Link="sarif-2.1.0.json" CopyToOutputDirectory="PreserveNewest"/>
+    <EmbeddedResource Include="$(MsBuildThisFileDirectory)..\Sarif\Schemata\sarif-$(SchemaVersionAsPublishedToSchemaStoreOrg).json" Link="sarif-2.1.0.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
